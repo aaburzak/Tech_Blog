@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require ('../..config/connection');
+const sequelize = require ('../../config/connection');
 const { Post, User, Comment }= require('../../models');
 const withAuth = require ('../../utils/auth');
 
@@ -74,21 +74,41 @@ router.put ('/:id', withAuth, (req, res) => {
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(postData => {
-      if((!postData) {
-        res.status(404).json({message: "Post id Not Found"});
-        return;
+      where: {
+          id: req.params.id
       }
-      res.json(postData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  })
+      .then(postData => {
+          if (!postData) {
+              res.status(404).json({ message: 'Post Id Not Found' });
+              return;
+          }
+          res.json(postData);
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
 });
+
+// router.delete('/:id', withAuth, (req, res) => {
+//   console.log('id', req.params.id);
+//   Post.destroy({
+//     where: {
+//       id: req.params.id
+//     }
+//   })
+//     .then(postData => {
+//       if((!postData) {
+//         res.status(404).json({message: "Post id Not Found"});
+//         return;
+//       }
+//       res.json(postData);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 module.exports = router;
