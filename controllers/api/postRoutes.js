@@ -63,7 +63,7 @@ router.put ('/:id', withAuth, (req, res) => {
       res.status(404).json({message: 'Post Id Not Found'});
       return;
     }
-    res.json(userData);
+    res.json(postData);
   })
   .catch(err => {
     console.log(err);

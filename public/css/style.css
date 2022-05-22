@@ -1,3 +1,10 @@
+:root{
+  --black: #363434;
+  --charcoal: #5C5757;
+  --bluegreen: #62929A;
+  --beige: #EFECEC;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,8 +14,8 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
-  background-color: rgb(190, 213, 190);
+  color: var(--beige);
+  background: radial-gradient( var(--charcoal) 0%, var(--black)100%);
 }
 
 nav {
@@ -21,12 +28,11 @@ nav {
 }
 
 .title-container h1 {
-  background-color: rgb(190, 213, 190);
-  color: rgb(41, 23, 23);
+  background-color: var(--beige);
+  color: var(--bluegreen);
   display: inline-block;
   padding: 12px;
   border-radius: 10px;
-  box-shadow: 8px 5px 2px rgba(196, 210, 196, 0.879);
 }
 
 #logout {
@@ -35,30 +41,30 @@ nav {
 
 a, #logout {
   text-decoration: none;
-  color: rgb(190, 213, 190);
+  color: var(--bluegreen);
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: rgb(168, 179, 168);
+  color: var(--beige);
 }
 
 
 #submit {
-  border: grey;
-  background-color: grey;
-  color: rgba(222, 213, 213, 0.872);
+  border: var(--black);
+  background-color: var(--charcoal);
+  color: var(--beige);
   width: 100%;
   margin: 5px;
 } 
 
 #signup-instead {
-  color: rgb(235, 225, 225);
+  color: var(--beige);
 }
 
 #signup-instead:hover {
-  background-color: #3486eb;
+  background-color: var(--black);
 }
 
 .user-info {
@@ -66,10 +72,10 @@ a:hover {
 }
 
 button:not(.logout) {
-  background-color: rgb(190, 213, 190);
+  background-color: var(--bluegreen);
   border: 0;
   padding: 1%;
-  color: rgb(41, 23, 23);
+  color: var(--black);
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
@@ -77,7 +83,7 @@ button:not(.logout) {
 }
 
 button:hover {
-  background-color: rgb(190, 213, 190);
+  background-color: var(--beige)
 }
 
 .post-list {
@@ -95,7 +101,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid var(--bluegreen);
 }
 
 textarea {
@@ -109,8 +115,8 @@ textarea {
 }
 
 h2 {
-  background-color: rgb(41, 23, 23);
-  color: rgb(190, 213, 190);
+  background-color: var(--black);
+  color: var(--beige);
   padding: 10px;
   margin: 0;
 }
@@ -133,9 +139,11 @@ form label {
 }
 
 header {
-  background-color: rgb(41, 23, 23);
-  border-bottom: 1px solid #ccc;
+  background-color: var(--black);
+  border-bottom: 1px solid var(--beige);
   padding: 0 1%;
+  margin-top: 5%;
+  border-radius: 1%;
 }
 
 header h1 {
@@ -167,9 +175,10 @@ ul {
 }
 
 .post .title {
-  background-color: rgb(41, 23, 23);
-  color: grey;
+  background-color: var(--black);
+  color:var(--charcoal);
   padding: 10px;
+  margin-bottom: 1%;
 }
 
 .post .title span {
@@ -194,7 +203,7 @@ ul {
 }
 
 .comments a {
-  color: black;
+  color: var(--beige)
   font-weight: normal;
 }
 .comment-form {
