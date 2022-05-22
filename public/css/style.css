@@ -203,7 +203,7 @@ ul {
 }
 
 .comments a {
-  color: var(--beige)
+  color: var(--beige);
   font-weight: normal;
 }
 .comment-form {
